@@ -137,6 +137,44 @@ input, select {
   vertical-align: middle;
 }
 
+
+
+/* =structure
+-------------------------------------------------------------- */
+@font-face {
+	font-family: 'InconsolataMedium';
+	src: url('fonts/inconsolata/inconsolata-webfont.eot');
+	src: local('☺'), url('fonts/inconsolata/inconsolata-webfont.woff') format('woff'), url('fonts/inconsolata/inconsolata-webfont.ttf') format('truetype'), url('fonts/inconsolata/inconsolata-webfont.svg#webfontNvQhAg6i') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LeagueGothicRegular';
+	src: url('fonts/league_gothic/league_gothic-webfont.eot');
+	src: local('☺'), url('fonts/league_gothic/league_gothic-webfont.woff') format('woff'), url('fonts/league_gothic/league_gothic-webfont.ttf') format('truetype'), url('fonts/league_gothic/league_gothic-webfont.svg#webfontUIMmrfxp') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'OFLSortsMillGoudyTTRegular';
+	src: url('fonts/oflgoudystmtt/oflgoudystmtt-webfont.eot');
+	src: local('☺'), url('fonts/oflgoudystmtt/oflgoudystmtt-webfont.woff') format('woff'), url('fonts/oflgoudystmtt/oflgoudystmtt-webfont.ttf') format('truetype'), url('fonts/oflgoudystmtt/oflgoudystmtt-webfont.svg#webfontF5FIbl3t') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'OFLSortsMillGoudyTTItalic';
+	src: url('fonts/oflgoudystmtt/oflgoudystmtt-italic-webfont.eot');
+	src: local('☺'), url('fonts/oflgoudystmtt/oflgoudystmtt-italic-webfont.woff') format('woff'), url('fonts/oflgoudystmtt/oflgoudystmtt-italic-webfont.ttf') format('truetype'), url('fonts/oflgoudystmtt/oflgoudystmtt-italic-webfont.svg#webfont4wrCNZpW') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
 /* =structure
 -------------------------------------------------------------- */
 
@@ -522,6 +560,17 @@ article {
   -box-shadow:        0 0 5px rgba(0,0,0, .5);
 }
 
+article.hentry h1,
+article.hentry h2,
+article.hentry h3,
+article.hentry h4,
+article.hentry h5,
+article.hentry h6 {
+  font-family: LeagueGothicRegular, helvetica, arial, sans-serif;
+  line-height: 1em;
+  margin-bottom: .25em;
+}
+
 /* post header */
 article header {
   margin-bottom: 2em;
@@ -529,7 +578,7 @@ article header {
 
 article header h1 {
   padding: 0;
-  font-size: 3em;
+  font-size: 5em;
 }
 
 article header h1 a {
@@ -548,19 +597,29 @@ article header .entry-meta a {
   color: #333;
 }
 
+article header .meta-prep,
 article header .meta-sep {
   font-style: italic;
-  font-family: georgia, serif;
+  font-family: OFLSortsMillGoudyTTRegular, georgia, serif;
   color: #999;
 }
 
 /* post body */
 article .entry-content {
-  font-family: georgia, serif;
+  font-family: OFLSortsMillGoudyTTRegular, georgia, serif;
+  line-height: 150%;
+  font-size: 125%;
 }
 
-article .entry-content {
-  line-height: 150%;
+article.hentry .entry-content h1 { font-size: 4em;   }
+article.hentry .entry-content h2 { font-size: 3.5em; }
+article.hentry .entry-content h3 { font-size: 3em;   }
+article.hentry .entry-content h4 { font-size: 2.5em; }
+article.hentry .entry-content h5 { font-size: 2em;   }
+article.hentry .entry-content h6 { font-size: 1.5em; }
+
+img {
+  max-width: 100%;
 }
 
 /* post footer */
