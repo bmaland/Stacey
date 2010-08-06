@@ -22,6 +22,8 @@ get_header(); ?>
         <h1 class="entry-title"><?php the_title(); ?></h1>
 
         <div class="entry-meta">
+          <?php echo get_avatar( $id_or_email, '24' ); ?>
+
           <?php
             printf( __( ' <span class="meta-prep meta-prep-author">Posted</span> <span class="meta-sep">on</span> <a href="%1$s" rel="bookmark"> <time class="entry-date" datetime="%2$s" pubdate>%3$s</time></a> <span class="meta-sep">by</span> <span class="author vcard"> <a class="url fn n" href="%4$s" title="%5$s">%6$s</a> </span> ', 'themename' ),
               get_permalink(),
