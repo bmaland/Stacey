@@ -1,18 +1,19 @@
 <?php
 /**
- * @package WordPress
- * @subpackage Toolbox
- */
+  * @package WordPress
+  * @subpackage Toolbox
+  */
+?>
 
-get_header(); ?>
+<?php get_header(); ?>
 
-		<div id="primary">
-			<div id="content">
+<div id="primary">
+  <div id="content">
 
-				<?php get_template_part( 'loop', 'index' ); ?>
+    <?php get_template_part( 'loop', 'index' ); ?>
 
-			</div><!-- #content -->
-		</div><!-- #primary -->
+  </div><!-- #content -->
+</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

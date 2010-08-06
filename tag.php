@@ -1,28 +1,68 @@
 <?php
 /**
- * The template used to display Tag Archive pages
- *
  * @package WordPress
  * @subpackage Toolbox
  */
+?>
 
-get_header(); ?>
+<?php /* Display navigation to next/previous pages when applicable */ ?>
+<?php if ( $wp_query->max_num_pages > 1 ) : ?>
+  <nav id="nav-above">
+    <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'themename' ); ?></h1>
+    <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'themename' ) ); ?></div>
+    <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'themename' ) ); ?></div>
+  </nav><!-- #nav-above -->
+<?php endif; ?>
 
-		<div id="primary">
-			<div id="content">
+<?php /* Start the Loop */ ?>
+<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php the_post(); ?>
+  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <header class="entry-header">
+      <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'themename' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
-				<h2 class="page-title"><?php
-					printf( __( 'Tag Archives: %s', 'themename' ), '<span>' . single_tag_title( '', false ) . '</span>' );
-				?></h2>
+      <div class="entry-meta">
+        <?php
 
-				<?php rewind_posts(); ?>
+          printf( __( ' <span class="meta-prep meta-prep-author">Posted</span> <span class="meta-sep">on</span> <a href="%1$s" rel="bookmark"> <time class="entry-date" datetime="%2$s" pubdate>%3$s</time></a> <span class="meta-sep">by</span> <span class="author vcard"> <a class="url fn n" href="%4$s" title="%5$s">%6$s</a> </span> ', 'themename' ),
+            get_permalink(),
+            get_the_date( 'c' ),
+            get_the_date(),
+            get_author_posts_url( get_the_author_meta( 'ID' ) ),
+            sprintf( esc_attr__( 'View all posts by %s', 'themename' ), get_the_author() ),
+            get_the_author()
+          );
+        ?>
+        <?php edit_post_link( __( 'Edit Post', 'themename' ), '<span class="edit-link">(', ')</span>' ); ?>
+      </div><!-- .entry-meta -->
+    </header><!-- .entry-header -->
 
-				<?php get_template_part( 'loop', 'tag' ); ?>
+    <?php if ( is_archive() || is_search() ) : // Only display Excerpts for archives & search ?>
+    <div class="entry-summary">
+      <?php the_excerpt( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'themename' ) ); ?>
+    </div><!-- .entry-summary -->
+    <?php else : ?>
+    <div class="entry-content">
+      <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'themename' ) ); ?>
+      <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'themename' ), 'after' => '</div>' ) ); ?>
+    </div><!-- .entry-content -->
+    <?php endif; ?>
 
-			</div><!-- #content -->
-		</div><!-- #primary -->
+    <footer class="entry-meta">
+      <?php the_tags( '<span class="tag-links">' . __( 'Tags: ', 'themename' ) . '</span>', ', ', '' ); ?>
+      <!-- <span class="comments-link"><?php// comments_popup_link( __( 'Leave a comment', 'themename' ), __( '1 Comment', 'themename' ), __( '% Comments', 'themename' ) ); ?></span> -->
+    </footer><!-- #entry-meta -->
+  </article><!-- #post-<?php the_ID(); ?> -->
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+  <?php comments_template( '', true ); ?>
+
+<?php endwhile; ?>
+
+<?php /* Display navigation to next/previous pages when applicable */ ?>
+<?php if (  $wp_query->max_num_pages > 1 ) : ?>
+  <nav id="nav-below">
+    <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'themename' ); ?></h1>
+    <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'themename' ) ); ?></div>
+    <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'themename' ) ); ?></div>
+  </nav><!-- #nav-below -->
+<?php endif; ?>

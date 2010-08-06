@@ -3,32 +3,32 @@ This stylesheet reformats the theme for the printed page.
 */
 
 body {
-	background: none !important;
+  background: none !important;
 }
 #wrapper {
-	float: none !important;
-	clear: both !important;
-	display: block !important;
-	position: relative !important;
+  float: none !important;
+  clear: both !important;
+  display: block !important;
+  position: relative !important;
 }
 #header {
-	border-bottom: 4pt solid #000;
-	padding-bottom: 18pt;
+  border-bottom: 4pt solid #000;
+  padding-bottom: 18pt;
 }
 #site-title, #site-description {
-	float: none;
-	margin: 0;
+  float: none;
+  margin: 0;
 }
 #site-title {
-	font-size: 13pt;
+  font-size: 13pt;
 }
 .entry-content {
-	font-size: 14pt;
-	line-height: 1.6em;
+  font-size: 14pt;
+  line-height: 1.6em;
 }
 .entry-title {
-	font-size: 21pt;
-	line-height: 1.4em;
+  font-size: 21pt;
+  line-height: 1.4em;
 }
 #access,
 #branding img,
@@ -38,48 +38,48 @@ body {
 .navigation,
 .page-link,
 .widget-area {
-	display: none !important;
+  display: none !important;
 }
 #branding img.wp-post-image {
-	display: block !important;
-	margin-left: -104pt;
-	margin-top: 20pt;
-	border: none;
-	margin-bottom: -24pt;
+  display: block !important;
+  margin-left: -104pt;
+  margin-top: 20pt;
+  border: none;
+  margin-bottom: -24pt;
 }
 #container, #header, #footer {
-	margin: 0 0 0 24%;
-	width: 70%;
+  margin: 0 0 0 24%;
+  width: 70%;
 }
 #content {
-	margin: 24pt 0 0;
+  margin: 24pt 0 0;
 }
 .wp-caption p {
-	font-size: 11pt;
+  font-size: 11pt;
 }
 #site-info,
 #site-generator {
-	float: none;
-	width: auto;
+  float: none;
+  width: auto;
 }
 #colophon {
-	width: auto;
+  width: auto;
 }
 img#wpstats {
-	display: none;
+  display: none;
 }
 #site-generator a {
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
 }
 #entry-author-info {
-	border: 1px solid #e7e7e7;
+  border: 1px solid #e7e7e7;
 }
 #main {
-	margin: 0;
-	width: auto;
-	padding: 0;
+  margin: 0;
+  width: auto;
+  padding: 0;
 }
 .home .sticky {
-	border: none;
+  border: none;
 }

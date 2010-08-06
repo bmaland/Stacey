@@ -6,27 +6,31 @@
 
 get_header(); ?>
 
-		<div id="primary">
-			<div id="content">
+    <div id="primary">
+      <div id="content">
 
-				<?php the_post(); ?>
+      <?php if ( have_posts() ) : ?>
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<header class="entry-header">
-						<h1 class="entry-title"><?php the_title(); ?></h1>
-					</header><!-- .entry-header -->
+        <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'themename' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+        <?php get_template_part( 'loop', 'search' ); ?>
 
-					<div class="entry-content">
-						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'themename' ), 'after' => '</div>' ) ); ?>
-						<?php edit_post_link( __( 'Edit', 'themename' ), '<span class="edit-link">', '</span>' ); ?>
-					</div><!-- .entry-content -->
-				</article><!-- #post-<?php the_ID(); ?> -->
+      <?php else : ?>
 
-				<?php comments_template( '', true ); ?>
+        <article id="post-0" class="post no-results not-found">
+          <header class="entry-header">
+            <h1 class="entry-title"><?php _e( 'Nothing Found', 'themename' ); ?></h1>
+          </header><!-- .entry-header -->
 
-			</div><!-- #content -->
-		</div><!-- #primary -->
+          <div class="entry-content">
+            <p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'themename' ); ?></p>
+            <?php get_search_form(); ?>
+          </div><!-- .entry-content -->
+        </article><!-- #post-0 -->
+
+      <?php endif; ?>
+
+      </div><!-- #content -->
+    </div><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
