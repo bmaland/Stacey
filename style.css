@@ -604,3 +604,12 @@ article footer {
   display: none;
 }
 
+/* =AT&T Interactive Engineering blog
+-------------------------------------------------------------- */
+
+header#branding h1 a {
+  line-height: 50px;
+  height: 40px;
+  display: block;
+  background: url(http://engineering.attinteractive.com/wp-content/uploads/2010/08/logo.png) no-repeat center left;
+}
