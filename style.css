@@ -624,6 +624,13 @@ img {
   max-width: 100%;
 }
 
+body .gist .gist-file .gist-data pre,
+code {
+  font-size: .8em;
+  font-family: InconsolataMedium, 'Bitstream Vera Sans Mono', Courier, monospace;
+  line-height: 1.1em;
+}
+
 /* post footer */
 article footer {
   margin-top: 1em;
