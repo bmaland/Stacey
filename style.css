@@ -159,24 +159,6 @@ input, select {
 	font-style: normal;
 }
 
-@font-face {
-	font-family: 'OFLSortsMillGoudyTTRegular';
-	src: url('fonts/oflgoudystmtt/oflgoudystmtt-webfont.eot');
-	src: local('☺'), url('fonts/oflgoudystmtt/oflgoudystmtt-webfont.woff') format('woff'), url('fonts/oflgoudystmtt/oflgoudystmtt-webfont.ttf') format('truetype'), url('fonts/oflgoudystmtt/oflgoudystmtt-webfont.svg#webfontF5FIbl3t') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'OFLSortsMillGoudyTTItalic';
-	src: url('fonts/oflgoudystmtt/oflgoudystmtt-italic-webfont.eot');
-	src: local('☺'), url('fonts/oflgoudystmtt/oflgoudystmtt-italic-webfont.woff') format('woff'), url('fonts/oflgoudystmtt/oflgoudystmtt-italic-webfont.ttf') format('truetype'), url('fonts/oflgoudystmtt/oflgoudystmtt-italic-webfont.svg#webfont4wrCNZpW') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-
-
 /* =structure
 -------------------------------------------------------------- */
 
@@ -602,13 +584,13 @@ article header .entry-meta a {
 article header .meta-prep,
 article header .meta-sep {
   font-style: italic;
-  font-family: OFLSortsMillGoudyTTRegular, georgia, serif;
+  font-family: georgia, serif;
   color: #999;
 }
 
 /* post body */
 article .entry-content {
-  font-family: OFLSortsMillGoudyTTRegular, georgia, serif;
+  font-family: georgia, serif;
   line-height: 150%;
   font-size: 125%;
 }
