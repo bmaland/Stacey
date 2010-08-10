@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WordPress
- * @subpackage Toolbox
+ * @subpackage Stacey
  */
 ?>
 <div id="secondary" class="widget-area">

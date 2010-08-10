@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WordPress
- * @subpackage Toolbox
+ * @subpackage Stacey
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>

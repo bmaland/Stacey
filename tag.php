@@ -1,9 +1,17 @@
 <?php
 /**
  * @package WordPress
- * @subpackage Toolbox
+ * @subpackage Stacey
  */
-?>
+
+get_header(); ?>
+
+<div id="primary">
+  <div id="content">
+
+    <h2 class="page-title"><?php
+      printf( __( 'Category Archives: %s', 'themename' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+    ?></h2>
 
 <?php /* Display navigation to next/previous pages when applicable */ ?>
 <?php if ( $wp_query->max_num_pages > 1 ) : ?>
@@ -66,3 +74,9 @@
     <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'themename' ) ); ?></div>
   </nav><!-- #nav-below -->
 <?php endif; ?>
+
+  </div><!-- #content -->
+</div><!-- #primary -->
+
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
