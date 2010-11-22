@@ -11,7 +11,7 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-@import url("private.css");
+/*@import url("private.css");*/
 
 
 /* =html5 reset
@@ -144,19 +144,19 @@ input, select {
 /* =structure
 -------------------------------------------------------------- */
 @font-face {
-	font-family: 'InconsolataMedium';
-	src: url('fonts/inconsolata/inconsolata-webfont.eot');
-	src: local('☺'), url('fonts/inconsolata/inconsolata-webfont.woff') format('woff'), url('fonts/inconsolata/inconsolata-webfont.ttf') format('truetype'), url('fonts/inconsolata/inconsolata-webfont.svg#webfontNvQhAg6i') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'InconsolataMedium';
+  src: url('fonts/inconsolata/inconsolata-webfont.eot');
+  src: local('☺'), url('fonts/inconsolata/inconsolata-webfont.woff') format('woff'), url('fonts/inconsolata/inconsolata-webfont.ttf') format('truetype'), url('fonts/inconsolata/inconsolata-webfont.svg#webfontNvQhAg6i') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'LeagueGothicRegular';
-	src: url('fonts/league_gothic/league_gothic-webfont.eot');
-	src: local('☺'), url('fonts/league_gothic/league_gothic-webfont.woff') format('woff'), url('fonts/league_gothic/league_gothic-webfont.ttf') format('truetype'), url('fonts/league_gothic/league_gothic-webfont.svg#webfontUIMmrfxp') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'LeagueGothicRegular';
+  src: url('fonts/league_gothic/league_gothic-webfont.eot');
+  src: local('☺'), url('fonts/league_gothic/league_gothic-webfont.woff') format('woff'), url('fonts/league_gothic/league_gothic-webfont.ttf') format('truetype'), url('fonts/league_gothic/league_gothic-webfont.svg#webfontUIMmrfxp') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* =structure
@@ -199,8 +199,6 @@ header#branding hgroup,
 #site-title {
   font-size: 1em;
   font-weight: bold;
-  margin: .67em 0;
-  text-align: right;
 }
 #site-description {
   font-size: 1em;
@@ -494,7 +492,8 @@ header#branding {
 
 header#branding h1 {
   color: white;
-  text-align: right;
+  text-align: left;
+  font-size: 2.5em;
 }
 
 header#branding h2 {
@@ -508,7 +507,7 @@ header#branding a {
 }
 
 header#branding a:hover {
-  color: #eee;;
+  color: #eee;
 }
 
 header#branding a:active {
@@ -550,10 +549,15 @@ article.hentry h3,
 article.hentry h4,
 article.hentry h5,
 article.hentry h6 {
-  font-family: LeagueGothicRegular, helvetica, arial, sans-serif;
+  font-family: Times New Roman, Helvetica, Arial, sans-serif;
   line-height: 1em;
   margin-bottom: .25em;
 }
+
+h1 a:visited {
+  color: black;
+}
+
 
 /* post header */
 article header {
@@ -562,7 +566,12 @@ article header {
 
 article header h1 {
   padding: 0;
-  font-size: 5em;
+  font-size: 4em;
+}
+
+article header h1 a {
+  text-decoration: none;
+  color: black;
 }
 
 article header h1 a {
@@ -606,11 +615,24 @@ img {
   max-width: 100%;
 }
 
+/* For code tags outside of gists */
+code {
+  color: #666;
+  font-size: 0.75em;
+}
+
 body .gist .gist-file .gist-data pre,
 code {
   font-size: .8em;
   font-family: InconsolataMedium, 'Bitstream Vera Sans Mono', Courier, monospace;
   line-height: 1.1em;
+}
+
+blockquote {
+  margin: 1.5em;
+  color: #666;
+  font-style: italic;
+  font-size: 90%;
 }
 
 /* post footer */
