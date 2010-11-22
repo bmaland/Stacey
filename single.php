@@ -25,13 +25,10 @@ get_header(); ?>
           <?php echo get_avatar( get_the_author_meta('user_email'), '24' ); ?>
 
           <?php
-            printf( __( ' <span class="meta-prep meta-prep-author">Posted</span> <span class="meta-sep">on</span> <a href="%1$s" rel="bookmark"> <time class="entry-date" datetime="%2$s" pubdate>%3$s</time></a> <span class="meta-sep">by</span> <span class="author vcard"> <a class="url fn n" href="%4$s" title="%5$s">%6$s</a> </span> ', 'themename' ),
+            printf( __( ' <span class="meta-prep meta-prep-author">Posted</span> <span class="meta-sep">on</span> <a href="%1$s" rel="bookmark"> <time class="entry-date" datetime="%2$s" pubdate>%3$s</time></a>', 'themename' ),
               get_permalink(),
               get_the_date( 'c' ),
-              get_the_date(),
-              get_author_posts_url( get_the_author_meta( 'ID' ) ),
-              sprintf( esc_attr__( 'View all posts by %s', 'themename' ), get_the_author() ),
-              get_the_author()
+              get_the_date()
             );
           ?>
         </div><!-- .entry-meta -->
@@ -43,10 +40,11 @@ get_header(); ?>
       </div><!-- .entry-content -->
 
       <footer class="entry-meta">
+        <?php printf( 'Filed in %s<br />', get_the_category_list(', ') ); ?>
         <?php
           $tag_list = get_the_tag_list( '', ', ' );
           if ( '' != $tag_list ) {
-            $utility_text = __( 'Tags %2$s', 'themename' );
+            $utility_text = __( 'Tagged %2$s', 'themename' );
           } else {
             $utility_text = __( '', 'themename' );
           }
@@ -70,6 +68,7 @@ get_header(); ?>
     </nav><!-- #nav-below -->
 
     <?php// comments_template( '', true ); ?>
+    <?php comments_template(); ?>
 
   <?php endwhile; // end of the loop. ?>
 

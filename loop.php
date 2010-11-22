@@ -8,7 +8,7 @@
 <?php /* Display navigation to next/previous pages when applicable */ ?>
 <?php if ( $wp_query->max_num_pages > 1 ) : ?>
   <nav id="nav-above">
-    <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'themename' ); ?></h1>    
+    <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'themename' ); ?></h1>
     <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'themename' ) ); ?></div>
     <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'themename' ) ); ?></div>
   </nav><!-- #nav-above -->
@@ -24,13 +24,11 @@
       <div class="entry-meta">
         <?php echo get_avatar( get_the_author_meta('user_email'), '24' ); ?>
         <?php
-          printf( __( '<span class="meta-prep meta-prep-author">Posted on </span><a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$s" pubdate>%3$s</time></a> <span class="meta-sep"> by </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s">%6$s</a></span>', 'themename' ),
+          printf( __( '<span class="meta-prep meta-prep-author">Posted on </span><a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$s" pubdate>%3$s</time></a>', 'themename' ),
             get_permalink(),
             get_the_date( 'c' ),
             get_the_date(),
-            get_author_posts_url( get_the_author_meta( 'ID' ) ),
-            sprintf( esc_attr__( 'View all posts by %s', 'themename' ), get_the_author() ),
-            get_the_author()
+            get_author_posts_url( get_the_author_meta( 'ID' ) )
           );
         ?>
       </div><!-- .entry-meta -->
@@ -48,7 +46,8 @@
     <?php endif; ?>
 
     <footer class="entry-meta">
-      <?php the_tags( '<span class="tag-links">' . __( 'Tags ', 'themename' ) . '</span>', ', ', '' ); ?>
+      <?php printf( 'Filed in %s<br />', get_the_category_list(', ') ); ?>
+      <?php the_tags( '<span class="tag-links">' . __( 'Tagged ', 'themename' ) . '</span>', ', ', '' ); ?>
       <!-- <span class="comments-link"><?php// comments_popup_link( __( 'Leave a comment', 'themename' ), __( '1 Comment', 'themename' ), __( '% Comments', 'themename' ) ); ?></span> -->
       <?php edit_post_link( __( 'Edit', 'themename' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
     </footer><!-- #entry-meta -->
@@ -61,7 +60,7 @@
 <?php /* Display navigation to next/previous pages when applicable */ ?>
 <?php if (  $wp_query->max_num_pages > 1 ) : ?>
   <nav id="nav-below">
-    <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'themename' ); ?></h1>    
+    <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'themename' ); ?></h1>
     <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'themename' ) ); ?></div>
     <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'themename' ) ); ?></div>
   </nav><!-- #nav-below -->
